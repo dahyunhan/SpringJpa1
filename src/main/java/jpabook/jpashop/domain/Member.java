@@ -17,9 +17,9 @@ public class Member {
     private Long id;
 
     private String name;
-@Embedded
+    @Embedded
     private Address address;
 
-@OneToMany(mappedBy ="member")
+    @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 }

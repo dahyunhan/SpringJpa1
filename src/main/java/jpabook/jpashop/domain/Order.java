@@ -27,19 +27,19 @@ public class Order {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id")
-    private  Delivery delivery;
+    private Delivery delivery;
 
     private LocalDateTime orderDate;
     @Enumerated(EnumType.STRING)
 
     private OrderStatus status; //주문 상태
 
-    public void addOrderItem(OrderItem orderItem){
+    public void addOrderItem(OrderItem orderItem) {
         orderItems.add(orderItem);
         orderItem.setOrder(this);
     }
 
-    public void setDelivery(Delivery delivery){
+    public void setDelivery(Delivery delivery) {
         this.delivery = delivery;
         delivery.setOrder(this);
     }
